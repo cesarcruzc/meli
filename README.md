@@ -78,6 +78,14 @@ git clone https://github.com/cesarcruzc/meli
 cd meli
 ```
 
+3. Crea el archivo `.env` a partir del archivo `.env.example`
+
+```
+cp .env.example .env
+```
+
+4. Configura las variables de entorno en el archivo `.env` el valor `X_API_KEY` fue enviado al correo y es vital.
+
 ## Ejecución
 
 1. El proyecto utiliza variables de entorno para configurar el servicio. Estas variables se encuentran en el
@@ -144,6 +152,7 @@ La API expone los siguientes endpoints:
 ---
 
 ## Paso a paso API
+
 1. Ejecutar el servicio de consulta de datos de MercadoLibre (meli)
 
 ```
@@ -151,11 +160,23 @@ curl --request POST \
   --url http://127.0.0.1:8888/api/v1/process-file \
   --header 'User-Agent: insomnia/2023.5.8'
 ```
+
 2. Consultar los items guardados en la base de datos
+
 ```
 curl --request GET \
   --url 'http://127.0.0.1:8888/api/v1/items?page=1&pageSize=10' \
   --header 'User-Agent: insomnia/2023.5.8'
+```
+
+## Desafio tecnico
+
+```
+proyecto-root/
+│
+├── theoretical-challenge/
+│   └── README.MD
+│       - Contiene la solución al desafío técnico.
 ```
 
 ## Contacto
