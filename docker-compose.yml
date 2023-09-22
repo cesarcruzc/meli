@@ -1,0 +1,19 @@
+version: "3"
+services:
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27020:27017"
+    networks:
+      - meli-network
+  app:
+    build: .
+    ports:
+      - "8888:8888"
+    depends_on:
+      - mongo
+    networks:
+      - meli-network
+networks:
+  meli-network:
+    driver: bridge
